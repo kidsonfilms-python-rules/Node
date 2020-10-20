@@ -2,7 +2,7 @@
 
 <h1 align="center"> Studly </h1>
 
-<p align="center"> Intro - Boilerplate for Readme.md on Github </p>
+<p align="center"> An App to Make Students Lives Just A Bit Easier </p>
 
 <hr/>
 

@@ -13,11 +13,19 @@ nav {
     box-shadow: 0 0px 0.2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
+.home {
+    padding: 12pc ;
+}
+
 .logo {
-    color: rgb(24, 24, 24);
+    color: rgb(106, 70, 70);
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 20px;
+}
+
+.h1{
+    padding: 12pc;
 }
 
 .nav-links {
@@ -40,6 +48,19 @@ nav {
     font-size: 14px;
 }
 
+
+.slideshow-container {
+    position: relative;
+    background: #f1f1f1f1;
+  }
+  
+ 
+
+.about {
+    background-image: linear-gradient(to right, rgb(92, 92, 201), rgb(54, 54, 224)) ;
+    padding: 20px;
+}
+
 .burger {
     display: none;
 }
@@ -53,10 +74,7 @@ nav {
 }
 
 @media screen and (max-width:768px) {
-    body {
-        overflow-x: hidden;
-    }
-
+    
     .nav-links {
         position: absolute;
         right: 0px;
@@ -80,6 +98,45 @@ nav {
         cursor: pointer;
     }
 }
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    float: right;
+    width: 50%;
+    height: 300px;
+  }
+  
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+  
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
 
 .nav-active {
     transform: translate(0%);

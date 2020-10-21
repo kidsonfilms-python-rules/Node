@@ -48,4 +48,3 @@ const navSlide = () => {
 >>>>>>> 007f8824d6527c3207200e857262004b7a85725c
 }
 
-navSlide()

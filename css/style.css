@@ -1,7 +1,9 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(241, 241, 241);
+    background-color: white;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 nav {
@@ -9,12 +11,14 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 5vh;
+    height: 10vh;
     background-color: #ffffff;
     box-shadow: 0 0px 0.2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .home {
-    padding: 12pc ;
+    padding: 15pc;
+    background-color: rgb(241, 241, 241);
 }
 
 .logo {
@@ -58,7 +62,9 @@ nav {
 
 .about {
     background-image: linear-gradient(to right, rgb(92, 92, 201), rgb(54, 54, 224)) ;
-    padding: 20px;
+    padding: 2%;
+    color: rgb(226, 226, 226);
+    text-align: center;
 }
 
 .burger {
@@ -104,18 +110,16 @@ nav {
     max-width: 300px;
     margin: auto;
     text-align: center;
-    font-family: arial;
-    float: right;
-    width: 50%;
-    height: 300px;
-  }
+    display: table-cell;
+    padding: 20px;
+}
   
-  .title {
+.title {
     color: grey;
     font-size: 18px;
-  }
+}
   
-  button {
+button {
     border: none;
     outline: 0;
     display: inline-block;
@@ -126,18 +130,17 @@ nav {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-  }
+}
   
-  a {
+a {
     text-decoration: none;
     font-size: 22px;
     color: black;
-  }
+}
   
-  button:hover, a:hover {
+button:hover, a:hover {
     opacity: 0.7;
-  }
-
+}
 .nav-active {
     transform: translate(0%);
 }
@@ -165,4 +168,13 @@ nav {
 
 }
 
+
+.creators {
+    padding: 2%;
+    align-items: center;
+    display: table;
+    width: 96vw; /*Optional */
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px;
+}
  

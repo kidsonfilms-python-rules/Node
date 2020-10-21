@@ -1,0 +1,114 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+#myCanvas {
+	cursor: crosshair;
+    position: fixed;
+    background-color: rgb(238, 238, 238);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 5vh;
+    height: 10vh;
+    background-color: #ffffff;
+    box-shadow: 0 0px 0.2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.home {
+    padding: 15pc;
+    background-color: rgb(241, 241, 241);
+}
+
+.logo {
+    color: rgb(106, 70, 70);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.h1{
+    padding: 12pc;
+}
+
+.nav-links {
+    display: flex;
+    /* background-color: red; */
+    justify-content: space-around;
+    width: 50%;
+    z-index: 100;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgb(24, 24, 24);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.slideshow-container {
+    position: relative;
+    background: #f1f1f1f1;
+  }
+  
+ 
+
+.about {
+    background-image: linear-gradient(to right, rgb(92, 92, 201), rgb(54, 54, 224)) ;
+    padding: 2%;
+    color: rgb(226, 226, 226);
+    text-align: center;
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226,226,226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width:768px) {
+    
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 95vh;
+        top: 8vh;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        transform: translate(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}

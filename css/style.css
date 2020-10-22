@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: whitesmoke;
     width: 100vw;
     overflow-x: hidden;
 }
@@ -17,9 +17,9 @@ nav {
 }
 
 .home {
-    padding: 15pc;
-    font-size: 40px;
-    background-image: ('wavy.jpg');
+    padding: 5pc;
+    font-size: 55px;
+
     
 }
 
@@ -70,7 +70,7 @@ nav {
  
 
 .about {
-    background-image: linear-gradient(to right, rgb(92, 92, 201), rgb(54, 54, 224)) ;
+    background-image: linear-gradient(to right, rgb(137, 137, 226), rgb(27, 2, 56)) ;
     padding: 2%;
     color: rgb(226, 226, 226);
     text-align: center;

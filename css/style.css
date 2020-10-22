@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
-    background-image: linear-gradient(to right, rgb(99, 95, 95), black);
+    background-color: #273036;
     width: 100vw;
     overflow-x: hidden;
 }
@@ -124,12 +124,13 @@ nav {
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 20px 0 rgba(75, 105, 240, 0.979);
     max-width: 300px;
     margin: auto;
     text-align: center;
     display: table-cell;
     padding: 20px;
+    background-color: whitesmoke;
 }
   
 .title {

@@ -127,6 +127,12 @@ nav {
     color: grey;
     font-size: 18px;
 }
+
+.a {
+    float: right;
+    width: 30pc;
+    height: 45pc;
+}
   
 button {
     border: none;

@@ -16,9 +16,6 @@ const navSlide = () => {
         })
     })
 
-<<<<<<< HEAD
-   
-=======
     var slideIndex = 1;
     showSlides(slideIndex);
 
@@ -45,6 +42,5 @@ const navSlide = () => {
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
     }
->>>>>>> 007f8824d6527c3207200e857262004b7a85725c
 }
 

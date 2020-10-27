@@ -1,2 +1,466 @@
-<link rel="stylesheet" href="css/agenda.css">
-<script src="agenda.js"></script>
+<style>
+body, *{
+    padding:0px;
+    margin:0px;
+	box-sizing: border-box;
+	color: whitesmoke;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+.calendar
+{
+    background-color: #383838;
+	padding: 20ch 20ch 20ch 20ch;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
+}
+
+.calendar .dropdown
+{
+    display: none;
+    position: absolute;
+    background-color: #121212;
+    color: #121212;
+    text-align: center;
+    font-size: 14pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 160px;
+    left: 0px;
+    z-index: 2000;
+}
+
+.calendar .dropdown .dropdown-item
+{
+    cursor:pointer;
+    opacity: .7;
+    transition: .5s opacity;
+}
+
+.calendar .dropdown .dropdown-item:hover
+{
+    opacity: 1;
+}
+
+.calendar .years
+{body, *{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+.calendar
+{
+    background-color: #121212;
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
+}
+
+.calendar .dropdown
+{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: darkorchid;
+    text-align: center;
+    font-size: 14pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 160px;
+    left: 0px;
+    z-index: 2000;
+}
+
+.calendar .dropdown .dropdown-item
+{
+    cursor:pointer;
+    opacity: .7;
+    transition: .5s opacity;
+}
+
+.calendar .dropdown .dropdown-item:hover
+{
+    opacity: 1;
+}
+
+.calendar .years
+{
+    display:none;
+}
+
+.calendar .title
+{
+    text-align:center;
+    font-size:20pt;
+}
+
+.calendar .calendar-btn
+{
+    float: left;
+    background-color: #24aeff;
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    width: 20%;
+    cursor: pointer;
+    transition: .5s background-color;
+}
+
+.calendar .calendar-btn:hover{
+    background-color:#1f71a1;
+}
+
+.calendar .year-btn
+{
+    float:right;
+}
+.day{
+	background-color: #121212;
+}
+.calendar .calendar-dates .days .day
+{
+    float:left;
+    width: 12%;
+    margin: 1%;
+    padding: 1%;
+    font-size:13pt;
+    text-align:center;
+    border-radius: 10px;
+    border: solid 1px #383838;
+}
+
+.header{
+	color: whitesmoke;
+}
+
+.calendar .calendar-dates .days .day.blank
+{
+    background-color: #121212;
+    border:none;
+}
+
+.calendar .calendar-dates .days .day.selected
+{
+    background-color: #1caff6;
+    color: white;
+    cursor:pointer;
+    opacity: .5;
+    transition: .5s opacity;
+}
+
+.calendar .calendar-dates .days .day.selected:hover
+{
+    opacity: 1;
+}
+
+.calendar .calendar-dates .days .day.label
+{
+    height: 40px;
+    background-color: #383838;
+    color: black;
+    border:none;
+    font-weight:bold;
+}
+
+.clear{
+    clear:both;
+}
+
+@media only screen and (max-width: 960px) {
+    .calendar{
+        width: 100%;
+        margin: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        position: relative;
+        left: 0px;
+    }
+}
+            
+    display:none;
+}
+
+.calendar .title
+{
+    text-align:center;
+    font-size:20pt;
+}
+
+.calendar .calendar-btn
+{
+    float: left;
+    background-color: darkorchid;
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    width: 20%;
+    cursor: pointer;
+    transition: .5s background-color;
+}
+
+.calendar .calendar-btn:hover{
+    background-color:#1f71a1;
+}
+
+.calendar .year-btn
+{
+    float:right;
+}
+
+.calendar .calendar-dates .days .day
+{
+    float:left;
+    width: 12%;
+    margin: 1%;
+    padding: 1%;
+    font-size:13pt;
+    text-align:center;
+    border-radius: 10px;
+    border: solid 1px #ddd;
+}
+
+.calendar .calendar-dates .days .day.blank
+{
+    background-color: #383838;
+    border:none;
+}
+
+.calendar .calendar-dates .days .day.selected
+{
+    background-color: #1caff6;
+    color: white;
+    cursor:pointer;
+    opacity: .5;
+    transition: .5s opacity;
+}
+
+.calendar .calendar-dates .days .day.selected:hover
+{
+    opacity: 1;
+}
+
+.calendar .calendar-dates .days .day.label
+{
+    height: 40px;
+    background-color: #383838;
+    color: black;
+    border:none;
+	font-weight:bold;
+	color: white;
+}
+
+.clear{
+    clear:both;
+}
+
+@media only screen and (max-width: 960px) {
+    .calendar{
+        width: 100%;
+        margin: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        position: relative;
+        left: 0px;
+    }
+}
+            
+</style>
+<script>
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+var startYear = 2000;
+var endYear = 2020;
+var month = 0;
+var year = 0;
+var selectedDays = new Array();
+var mousedown = false;
+var mousemove = false;
+
+function loadCalendarMonths() {
+    for (var i = 0; i < months.length; i++) {
+        var doc = document.createElement("div");
+        doc.innerHTML = months[i];
+        doc.classList.add("dropdown-item");
+
+        doc.onclick = (function () {
+            var selectedMonth = i;
+            return function () {
+                month = selectedMonth;
+                document.getElementById("curMonth").innerHTML = months[month];
+                loadCalendarDays();
+                return month;
+            }
+        })();
+
+        document.getElementById("months").appendChild(doc);
+    }
+}
+
+function loadCalendarYears() {
+    document.getElementById("years").innerHTML = "";
+
+    for (var i = startYear; i <= endYear; i++) {
+        var doc = document.createElement("div");
+        doc.innerHTML = i;
+        doc.classList.add("dropdown-item");
+
+        doc.onclick = (function () {
+            var selectedYear = i;
+            return function () {
+                year = selectedYear;
+                document.getElementById("curYear").innerHTML = year;
+                loadCalendarDays();
+                return year;
+            }
+        })();
+
+        document.getElementById("years").appendChild(doc);
+    }
+}
+
+function loadCalendarDays() {
+    document.getElementById("calendarDays").innerHTML = "";
+
+    var tmpDate = new Date(year, month, 0);
+    var num = daysInMonth(month, year);
+    var dayofweek = tmpDate.getDay();       // find where to start calendar day of week
+
+    for (var i = 0; i <= dayofweek; i++) {
+        var d = document.createElement("div");
+        d.classList.add("day");
+        d.classList.add("blank");
+        document.getElementById("calendarDays").appendChild(d);
+    }
+
+    for (var i = 0; i < num; i++) {
+        var tmp = i + 1;
+        var d = document.createElement("div");
+        d.id = "calendarday_" + tmp;
+        d.className = "day";
+        d.innerHTML = tmp;
+        d.dataset.day = tmp;
+
+        d.addEventListener('click', function(){
+            this.classList.toggle('selected');
+
+            if (!selectedDays.includes(this.dataset.day))
+                selectedDays.push(this.dataset.day);
+
+            else
+                selectedDays.splice(selectedDays.indexOf(this.dataset.day), 1);
+        });
+
+        d.addEventListener('mousemove', function(e){
+           e.preventDefault();
+            if (mousedown)
+            {
+                this.classList.add('selected');
+
+                if (!selectedDays.includes(this.dataset.day))
+                    selectedDays.push(this.dataset.day);
+            }
+        });
+
+        d.addEventListener('mousedown', function(e){
+            e.preventDefault();
+            mousedown = true;
+        });
+        
+        d.addEventListener('mouseup', function(e){
+            e.preventDefault();
+            mousedown = false;
+        });
+
+        document.getElementById("calendarDays").appendChild(d);
+    }
+
+    var clear = document.createElement("div");
+    clear.className = "clear";
+    document.getElementById("calendarDays").appendChild(clear);
+}
+
+function daysInMonth(month, year)
+{
+    var d = new Date(year, month+1, 0);
+    return d.getDate();
+}
+
+window.addEventListener('load', function () {
+    var date = new Date();
+    month = date.getMonth();
+    year = date.getFullYear();
+    document.getElementById("curMonth").innerHTML = months[month];
+    document.getElementById("curYear").innerHTML = year;
+    loadCalendarMonths();
+    loadCalendarYears();
+    loadCalendarDays();
+});
+            
+</script>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="calendar.css">
+    </head>
+    <body>
+		<div class="header">
+			<h3 style="color: whitesmoke;">Your Agenda</h3>
+		</div>
+        <div class="calendar" id="calendar">
+			
+            <div class="calendar-btn month-btn" onclick="$('#months').toggle('fast')">
+                <span id="curMonth"></span>
+                <div id="months" class="months dropdown"></div>
+            </div>
+        
+            <div class="calendar-btn year-btn" onclick="$('#years').toggle('fast')">
+                <span id="curYear"></span>
+                <div id="years" class="years dropdown"></div>
+            </div>
+        
+            <div class="clear"></div>
+        
+            <div class="calendar-dates">
+                <div class="days">
+                    <div class="day label">SUN</div>
+                    <div class="day label">MON</div>
+                    <div class="day label">TUE</div>
+                    <div class="day label">WED</div>
+                    <div class="day label">THUR</div>
+                    <div class="day label">FRI</div>
+                    <div class="day label">SAT</div>
+        
+                    <div class="clear"></div>
+                </div>
+        
+                <div id="calendarDays" class="days">
+                </div>
+			</div>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#242424" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+                
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+		<script src="calendar.js" async defer></script>
+		
+		
+    </body>
+</html>
+            

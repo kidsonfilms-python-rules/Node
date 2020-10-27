@@ -19,6 +19,19 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="#about">About</a></li>
+           
+              <div class="dropdown">
+                <button class="dropbtn" style="font-family: Arial, Helvetica, sans-serif;">Services
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="agenda.html">Agenda</a>
+                  <a href="notes.html">Notes</a>
+                  <a href="tools.html">Tools</a>
+                </div>
+              </div>
+            </div>
+
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="auth.html">Sign In</a></li>
             <li><a href="profile.html">Your Profile</a></li>
@@ -35,7 +48,10 @@
       <h4 style="font-family: Poppins; margin: 0;">
       Studly
       </h4>
-      <p style="font-size: x-large;">We make studying easier<br>Join now with a free account</p>
+      <p style="font-size: x-large;">We make studying easier<br>Join now with a free account<br><br>If we get 150 user we promise to add an educational socail media page,<br> where you can post qestions and answer qestions of every subject!</p>
+      
+      
+      
 
     </div>
       
@@ -78,18 +94,61 @@
     body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
-
-
-
-
-@keyframes wave {
-  0% {
-    margin-left: 0;
-  }
-  100% {
-    margin-left: -1600px;
-  }
+.dropdown {
+  float: left;
+  overflow: hidden;
 }
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: ; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
 
 @keyframes swell {
   0%, 100% {
@@ -209,6 +268,23 @@ hr {
      width: 100%;
   }
 }
+
+#postit { 
+  display: block;
+
+  width: 300px;
+  height: 300px;
+  background-image: url('https://www.101computing.net/wp/wp-content/uploads/post-it.jpg');
+ }
+
+#message {
+  text-align: center;
+  padding: 70px 50px 50px 50px;
+  color: #C40808;
+  font-family: Trebuchet MS;
+  font-size: 20px;
+
+}
 </style>
 
 <script>
@@ -250,7 +326,7 @@ window.onclick = function(event) {
         <h1>Sarthak Datta</h1>
         <p class="title">Co Founder, UI UX/ Web Developer</p>
         <p></p>
-        <a href="https://github.com/NightRider24#"><i class="fa fa-github"></i></a>
+        <a href="https://github.com/MuffinKid"><i class="fa fa-github"></i></a>
         <a href="#"><i class="fa fa-discord"></i></a>
         <!-- <p><button>Contact</button></p> -->
       </div>

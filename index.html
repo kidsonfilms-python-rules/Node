@@ -6,7 +6,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="webapp/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Studly - A Better Way To Study</title>
 </head>
@@ -19,8 +19,8 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="#about">About</a></li>
-           
-              <!-- <div class="dropdown">
+
+            <!-- <div class="dropdown">
                 <button class="dropbtn" style="font-family: Arial, Helvetica, sans-serif;">Services
                   <i class="fa fa-caret-down"></i>
                 </button>
@@ -34,8 +34,8 @@
 
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="auth.html">Sign In</a></li>
-            <li><a href="profile.html">Your Profile</a></li>
-          
+            <li><a href="webapp/profile.html">Your Profile</a></li>
+
         </ul>
         <div class="burger">
             <div class="line1"></div>
@@ -43,300 +43,61 @@
             <div class="line3"></div>
         </div>
     </nav>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#242424" fill-opacity="1" d="M0,128L21.8,122.7C43.6,117,87,107,131,96C174.5,85,218,75,262,74.7C305.5,75,349,85,393,117.3C436.4,149,480,203,524,208C567.3,213,611,171,655,149.3C698.2,128,742,128,785,154.7C829.1,181,873,235,916,224C960,213,1004,139,1047,133.3C1090.9,128,1135,192,1178,181.3C1221.8,171,1265,85,1309,80C1352.7,75,1396,149,1418,186.7L1440,224L1440,0L1418.2,0C1396.4,0,1353,0,1309,0C1265.5,0,1222,0,1178,0C1134.5,0,1091,0,1047,0C1003.6,0,960,0,916,0C872.7,0,829,0,785,0C741.8,0,698,0,655,0C610.9,0,567,0,524,0C480,0,436,0,393,0C349.1,0,305,0,262,0C218.2,0,175,0,131,0C87.3,0,44,0,22,0L0,0Z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#242424" fill-opacity="1"
+            d="M0,128L21.8,122.7C43.6,117,87,107,131,96C174.5,85,218,75,262,74.7C305.5,75,349,85,393,117.3C436.4,149,480,203,524,208C567.3,213,611,171,655,149.3C698.2,128,742,128,785,154.7C829.1,181,873,235,916,224C960,213,1004,139,1047,133.3C1090.9,128,1135,192,1178,181.3C1221.8,171,1265,85,1309,80C1352.7,75,1396,149,1418,186.7L1440,224L1440,0L1418.2,0C1396.4,0,1353,0,1309,0C1265.5,0,1222,0,1178,0C1134.5,0,1091,0,1047,0C1003.6,0,960,0,916,0C872.7,0,829,0,785,0C741.8,0,698,0,655,0C610.9,0,567,0,524,0C480,0,436,0,393,0C349.1,0,305,0,262,0C218.2,0,175,0,131,0C87.3,0,44,0,22,0L0,0Z">
+        </path>
+    </svg>
     <div class="home" id="home">
-      <h4 style="font-family: Poppins; margin: 0;">
-      Studly
-      </h4>
-      <p style="font-size: x-large;">We make studying easier<br>Join now with a free account<br><br>If we get 150 user we promise to add an educational socail media page,<br> where you can post qestions and answer qestions of every subject!</p>
-      
-      
-      
-
+        <h4 style="font-family: Poppins; margin: 0;">
+            Studly
+        </h4>
+        <p style="font-size: x-large;">We make studying easier<br>Join now with a free account<br><br>If we get 150 user
+            we promise to add an educational socail media page,<br> where you can post qestions and answer qestions of
+            every subject!</p>
     </div>
-      
-
-<!-- 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button> -->
-
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
-    <div class="container">
-      <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
-      <hr>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      
-      <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-      </label>
-
-      <p>By creating an account you agree to our <a href="terms.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
-      </div>
-    </div>
-  </form>
-</div>
-
-
-<style>
-    body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: Poppins; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-
-
-
-
-@keyframes swell {
-  0%, 100% {
-    transform: translate3d(0,-25px,0);
-  }
-  50% {
-    transform: translate3d(0,5px,0);
-  }
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #6b98f8e9;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  float: right;
-
-
-}
-
-button:hover {
-  opacity:1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;    
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
- 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
-
-#postit { 
-  display: block;
-
-  width: 300px;
-  height: 300px;
-  background-image: url('https://www.101computing.net/wp/wp-content/uploads/post-it.jpg');
- }
-
-#message {
-  text-align: center;
-  padding: 70px 50px 50px 50px;
-  color: #C40808;
-  font-family: Trebuchet MS;
-  font-size: 20px;
-
-}
-</style>
-
-<script>
-    var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
 
 
     <script src="js/styles.js"></script>
 
-<div class="about" id="about">
-    <h1>About</h1>
-    <p>Here at Studly there are plenty of useful resources to help you study!<br> In Agenda, you can make your own personal schedule as well as get notifyed.<br> Our tools page offers calculators and conversion charts.<br> And of course a digital notepad/ white board to do your notes in. </p>
-</div>
-
-
-
-<section class="creators">
-    <div class="card">
-        <!-- <img src="img.jpg" alt="John" style="width:100%"> -->
-        <h1>Siddharth Ray</h1>
-        <p class="title">Co Founder, Fullstack Developer</p>
-        <p></p>
-        <a href="https://github.com/kidsonfilms-python-rules/"><i class="fa fa-github"></i></a>
-        <a href="https://stackoverflow.com/users/13946018/kidsonfilms-python-rules"><i class="fa fa-stack-overflow"></i></a>
-        <a href="https://reddit.com/u/kidsonfilms"><i class="fa fa-reddit"></i></a>
-        <!-- <p><button>Contact</button></p> -->
-      </div>
-    
-      <div class="card">
-        <!-- <img src="img.jpg" alt="John" style="width:100%"> -->
-        <h1>Sarthak Datta</h1>
-        <p class="title">Co Founder, UI UX/ Web Developer</p>
-        <p></p>
-        <a href="https://github.com/MuffinKid"><i class="fa fa-github"></i></a>
-        <a href="#"><i class="fa fa-discord"></i></a>
-        <!-- <p><button>Contact</button></p> -->
-      </div>
-    
-    
+    <div class="about" id="about">
+        <h1>About</h1>
+        <p>Here at Studly there are plenty of useful resources to help you study!<br> In Agenda, you can make your own
+            personal schedule as well as get notifyed.<br> Our tools page offers calculators and conversion charts.<br>
+            And of course a digital notepad/ white board to do your notes in. </p>
     </div>
-    
-</section>
 
-</div>
+
+
+    <section class="creators">
+        <div class="card">
+            <!-- <img src="img.jpg" alt="John" style="width:100%"> -->
+            <h1>Siddharth Ray</h1>
+            <p class="title">Co Founder, Fullstack Developer</p>
+            <p></p>
+            <a href="https://github.com/kidsonfilms-python-rules/"><i class="fa fa-github"></i></a>
+            <a href="https://stackoverflow.com/users/13946018/kidsonfilms-python-rules"><i
+                    class="fa fa-stack-overflow"></i></a>
+            <a href="https://reddit.com/u/kidsonfilms"><i class="fa fa-reddit"></i></a>
+            <!-- <p><button>Contact</button></p> -->
+        </div>
+
+        <div class="card">
+            <!-- <img src="img.jpg" alt="John" style="width:100%"> -->
+            <h1>Sarthak Datta</h1>
+            <p class="title">Co Founder, UI UX/ Web Developer</p>
+            <p></p>
+            <a href="https://github.com/MuffinKid"><i class="fa fa-github"></i></a>
+            <a href="#"><i class="fa fa-discord"></i></a>
+            <!-- <p><button>Contact</button></p> -->
+        </div>
+
+
+        </div>
+
+    </section>
+
+    </div>
 
 
 

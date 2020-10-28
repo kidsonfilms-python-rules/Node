@@ -3,9 +3,15 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+a {
+    color: white;
+    text-emphasis: none;
+    text-decoration: none;
+}
   
   body {
-    font-family: 'Montserrat';
+    font-family: 'Poppins';
     background: #242C39;
     color: #fff;
   }
@@ -14,11 +20,13 @@
     height: 120px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     overflow-x: scroll;
     padding: 30px 0 0 20px;
     margin-bottom: 20px;
   }
+
+  
   
   .live .person {
     position: relative;
@@ -33,6 +41,20 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+  }
+
+  .add-friend {
+    position: relative;
+    background-position: 50%;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
   }
   
   

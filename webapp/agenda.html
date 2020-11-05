@@ -1,60 +1,333 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/agenda.css">
-    </head>
-    <body>
-		<div class="header">
-			<h3 style="color: whitesmoke;">Your Agenda</h3>
-		</div>
-        <div class="calendar" id="calendar">
-			
-            <div class="calendar-btn month-btn" onclick="$('#months').toggle('fast')">
-                <span id="curMonth"></span>
-                <div id="months" class="months dropdown"></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed");
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: #121212;
+}
+
+header {
+  text-align: center;
+}
+
+#calendar-wrap {
+  margin-left: 20%;
+  margin-right: 20%;
+  // border: 1px #999999 solid;
+  text-align: center;
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar__col {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/**************************
+ HEAD (Day & Date) 
+**************************/
+.calendar__head {
+  // background-color: #a53d36;
+  // color: white;
+  padding: 0.4em;
+  // border-top: 1px #CECECE solid;
+}
+
+.calendar__head__name {
+  color: #999;
+}
+
+.calendar__head__date {
+  font-size: 2.5em;
+}
+
+/**************************
+ COLUMN
+**************************/
+.calendar__col--legend {
+  max-width: fit-content;
+}
+
+.calendar__col--legend > div {
+  padding-right: 4px;
+  padding-left: 4px;
+  /* Vertical align text */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column; /* column | row */
+  /* =================== */
+}
+
+/**************************
+ CELL (Empty day space)
+**************************/
+.calendar__cell {
+  flex: 0 0 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.calendar__cell--appointment {
+  // background-color: #f1f1f1;
+  border-top: 1px #e5e5e5 solid;
+  border-right: 1px #f4f4f4 solid;
+}
+
+.calendar__cell--time {
+  // background-color: #f1f1f1;
+  // border-bottom: 1px #CECECE solid;
+  transform: translateY(-50%);
+  font-size: 0.9em;
+  color: #999;
+  width: 50px;
+}
+
+.calendar__cell--time:after {
+  content: "";
+  background: #ddd;
+  height: 4px;
+  width: 4px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+/**************************
+ EVENT
+**************************/
+.calendar__event {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  // float: left;
+  background-color: #505050;
+  color: white;
+  min-height: fit-content;
+  border-radius: 8px;
+  text-align: left;
+
+  .calendar__event--time {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+  }
+
+  .calendar__event--title {
+    padding-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/**************************
+ EVENT Sizes and offsets
+**************************/
+/* 
+    Event duration in minutes: duration-15, duration-30,
+    duration-45, duration-60, ...
+  */
+$class-slug: duration !default;
+
+@for $i from 1 to 12*4+1 {
+  div.calendar__event--#{$class-slug}-#{15*$i} {
+    // flex: 0 0 #{30*$i}px;
+    height: #{10*$i}px;
+  }
+}
+
+/* Event Offset (min.): past-15, past-30 */
+.calendar__event--past-15 {
+  top: 10px;
+}
+
+.calendar__event--past-30 {
+  top: 20px;
+}
+
+.calendar__event--past-45 {
+  top: 30px;
+}
+</style>
+</head>
+</head>
+<body>
+    <br>
+
+<div id="calendar-wrap">
+    		<div class="calendar">
+          
+          <div class="calendar__col calendar__col--legend">
+            <div class="calendar__head">
+              <div class="calendar__head__name">&nbsp;</div>
+              <div class="calendar__head__date">&nbsp;</div>
             </div>
-        
-            <div class="calendar-btn year-btn" onclick="$('#years').toggle('fast')">
-                <span id="curYear"></span>
-                <div id="years" class="years dropdown"></div>
+            <div class="calendar__cell calendar__cell--time">08:00</div>
+            <div class="calendar__cell calendar__cell--time">09:00</div>
+            <div class="calendar__cell calendar__cell--time">10:00</div>
+            <div class="calendar__cell calendar__cell--time">11:00</div>
+            <div class="calendar__cell calendar__cell--time">12:00</div>
+            <div class="calendar__cell calendar__cell--time">1:00</div>
+            <div class="calendar__cell calendar__cell--time">2:00</div>
+            <div class="calendar__cell calendar__cell--time">3:00</div>
+            <div class="calendar__cell calendar__cell--time">4:00</div>
+            <div class="calendar__cell calendar__cell--time">5:00</div>
+            <div class="calendar__cell calendar__cell--time">6:00</div>
+            <div class="calendar__cell calendar__cell--time">7:00</div>
+            <div class="calendar__cell calendar__cell--time">8:00</div>
+            <div class="calendar__cell calendar__cell--time">9:00</div>
+            <div class="calendar__cell calendar__cell--time">10:00</div>
+            <div class="calendar__cell calendar__cell--time">11:00</div>
+          </div>
+          
+          <div class="calendar__col">
+            <div class="calendar__head">
+              <div class="calendar__head__name">Monday</div>
+              <div class="calendar__head__date">2</div>
             </div>
-        
-            <div class="clear"></div>
-        
-            <div class="calendar-dates">
-                <div class="days">
-                    <div class="day label">SUN</div>
-                    <div class="day label">MON</div>
-                    <div class="day label">TUE</div>
-                    <div class="day label">WED</div>
-                    <div class="day label">THUR</div>
-                    <div class="day label">FRI</div>
-                    <div class="day label">SAT</div>
-        
-                    <div class="clear"></div>
-                </div>
-        
-                <div id="calendarDays" class="days">
-                </div>
-			</div>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#242424" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-        </div>
-                
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-		<script src="js/agenda.js" async defer></script>
-		
-		
-    </body>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment">
+              <div class="calendar__event calendar__event--duration-180">
+                <div class="calendar__event--time">10:00 - 1:00</div>
+                <div class="calendar__event--title">Testy</div>
+              </div>
+            </div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+          </div><!-- /. day-view -->
+          
+          <div class="calendar__col">
+            <div class="calendar__head">
+              <div class="calendar__head__name">Tuesday</div>
+              <div class="calendar__head__date">3</div>
+            </div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+          </div>
+          
+          <div class="calendar__col">
+            <div class="calendar__head">
+              <div class="calendar__head__name">Wednesday</div>
+              <div class="calendar__head__date">4</div>
+            </div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment">
+              <div class="calendar__event calendar__event--duration-120 calendar__event--past-30">
+                <div class="calendar__event--time">12:30 - 14:30</div>
+                <div class="calendar__event--title">Testy</div>
+              </div>
+            </div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+          </div>
+          
+          <div class="calendar__col">
+            <div class="calendar__head">
+              <div class="calendar__head__name">Thursday</div>
+              <div class="calendar__head__date">5</div>
+            </div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+          </div>
+          
+          <div class="calendar__col">
+            <div class="calendar__head">
+              <div class="calendar__head__name">Friday</div>
+              <div class="calendar__head__date">6</div>
+            </div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+            <div class="calendar__cell calendar__cell--appointment"></div>
+          </div>
+          
+          <!-- /. day-view -->
+    		</div><!-- /. calendar -->
+  
+</div><!-- /. wrap -->
+
+<br>
+</body>
 </html>
             

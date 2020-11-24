@@ -202,8 +202,12 @@ button:hover, a:hover {
     color: rgb(241, 241, 241);
 }
 
-.fa {
+.social {
     color: white;
+    border-radius: 40px;
+    background-color: rgb(36, 36, 36);
+    padding: 10px;
+    margin: 5px;
 }
   
  

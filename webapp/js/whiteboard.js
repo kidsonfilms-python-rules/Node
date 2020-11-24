@@ -170,22 +170,28 @@ window.onload = function () {
 			for (i = 0; i < menuitems.length; i++) {
 				menuitems[i].style.display = "block";
 			}
+			document.getElementById('menu-bar').style.transform = "rotate(180deg)";
 			MENU_STATUS = 1
 		} else if (MENU_STATUS == 1) {
 			var i;
 			for (i = 0; i < menuitems.length; i++) {
 				menuitems[i].style.display = "none";
 			}
+			document.getElementById('menu-bar').style.transform = "rotate(0deg)";
 			MENU_STATUS = 0
 		}
 	})
 
 	document.getElementById('color').addEventListener('click', () => {
 		if (currentindex + 1 == coloroptions.length) {
-			var currentindex = 0
+			console.info('Switching colors to ' + coloroptions[0])
+			currentindex = 0;
+			document.getElementById('color').style.color = coloroptions[0];
 			switchColor(currentindex)
 		} else {
-			var currentindex = currentindex + 1
+			currentindex = currentindex + 1
+			console.info('Switching colors to ' + coloroptions[currentindex] + ' or index #' + currentindex)
+			document.getElementById('color').style.color = coloroptions[currentindex];
 			switchColor(currentindex)
 		}
 	})

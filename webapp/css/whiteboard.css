@@ -113,3 +113,18 @@ nav {
         cursor: pointer;
     }
 }
+
+.menu {
+    background-color: whitesmoke;
+    z-index: 2;
+    position: absolute;
+    margin-top: 4vh;
+    margin-left: 4vw;
+    border-radius: 50px;
+    padding: 10px;
+    transition: width 2s;
+}
+
+.menu-item {
+    margin-top: 20px;
+}

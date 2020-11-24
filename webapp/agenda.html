@@ -4,168 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-@import url("https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed");
-
-body {
-  font-family: "Roboto Condensed", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  background-color: #121212;
-}
-
-header {
-  text-align: center;
-}
-
-#calendar-wrap {
-  margin-left: 20%;
-  margin-right: 20%;
-  // border: 1px #999999 solid;
-  text-align: center;
-}
-
-.calendar {
-  display: flex;
-  justify-content: center;
-}
-
-.calendar__col {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-
-/**************************
- HEAD (Day & Date) 
-**************************/
-.calendar__head {
-  // background-color: #a53d36;
-  // color: white;
-  padding: 0.4em;
-  // border-top: 1px #CECECE solid;
-}
-
-.calendar__head__name {
-  color: #999;
-}
-
-.calendar__head__date {
-  font-size: 2.5em;
-}
-
-/**************************
- COLUMN
-**************************/
-.calendar__col--legend {
-  max-width: fit-content;
-}
-
-.calendar__col--legend > div {
-  padding-right: 4px;
-  padding-left: 4px;
-  /* Vertical align text */
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column; /* column | row */
-  /* =================== */
-}
-
-/**************************
- CELL (Empty day space)
-**************************/
-.calendar__cell {
-  flex: 0 0 40px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.calendar__cell--appointment {
-  // background-color: #f1f1f1;
-  border-top: 1px #e5e5e5 solid;
-  border-right: 1px #f4f4f4 solid;
-}
-
-.calendar__cell--time {
-  // background-color: #f1f1f1;
-  // border-bottom: 1px #CECECE solid;
-  transform: translateY(-50%);
-  font-size: 0.9em;
-  color: #999;
-  width: 50px;
-}
-
-.calendar__cell--time:after {
-  content: "";
-  background: #ddd;
-  height: 4px;
-  width: 4px;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  border-radius: 50%;
-}
-
-/**************************
- EVENT
-**************************/
-.calendar__event {
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  // float: left;
-  background-color: #505050;
-  color: white;
-  min-height: fit-content;
-  border-radius: 8px;
-  text-align: left;
-
-  .calendar__event--time {
-    padding-top: 10px;
-    padding-left: 10px;
-    font-size: 12px;
-  }
-
-  .calendar__event--title {
-    padding-top: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-/**************************
- EVENT Sizes and offsets
-**************************/
-/* 
-    Event duration in minutes: duration-15, duration-30,
-    duration-45, duration-60, ...
-  */
-$class-slug: duration !default;
-
-@for $i from 1 to 12*4+1 {
-  div.calendar__event--#{$class-slug}-#{15*$i} {
-    // flex: 0 0 #{30*$i}px;
-    height: #{10*$i}px;
-  }
-}
-
-/* Event Offset (min.): past-15, past-30 */
-.calendar__event--past-15 {
-  top: 10px;
-}
-
-.calendar__event--past-30 {
-  top: 20px;
-}
-
-.calendar__event--past-45 {
-  top: 30px;
-}
-</style>
+    <style>@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+        @import url("https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed");
+        
+        body {
+          font-family: "Roboto Condensed", sans-serif;
+          font-weight: 400;
+          font-size: 14px;
+          background-color: #121212;
+        }
+        
+        header {
+          text-align: center;
+        }
+        
+        #calendar-wrap {
+          margin-left: 20%;
+          margin-right: 20%;
+          border: 1px #999999 solid;
+          text-align: center;
+        }
+        
+        .calendar {
+          display: flex;
+          justify-content: center;
+        }
+        
+        .calendar__col {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+        }
+        
+        /**************************
+         HEAD (Day & Date) 
+        **************************/
+        .calendar__head {
+          background-color: #a53d36;
+          color: white;
+          padding: 0.4em;
+          border-top: 1px #CECECE solid;
+        }
+        
+        .calendar__head__name {
+          color: #999;
+        }
+        
+        .calendar__head__date {
+          font-size: 2.5em;
+        }
+        
+        /**************************
+         COLUMN
+        **************************/
+        .calendar__col--legend {
+          max-width: fit-content;
+        }
+        
+        .calendar__col--legend > div {
+          padding-right: 4px;
+          padding-left: 4px;
+          /* Vertical align text */
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          flex-direction: column; /* column | row */
+          /* =================== */
+        }
+        
+        /**************************
+         CELL (Empty day space)
+        **************************/
+        .calendar__cell {
+          flex: 0 0 40px;
+          box-sizing: border-box;
+          position: relative;
+        }
+        
+        .calendar__cell--appointment {
+          background-color: #f1f1f1;
+          border-top: 1px #e5e5e5 solid;
+          border-right: 1px #f4f4f4 solid;
+        }
+        
+        .calendar__cell--time {
+          background-color: #f1f1f1;
+          border-bottom: 1px #CECECE solid;
+          transform: translateY(-50%);
+          font-size: 0.9em;
+          color: #999;
+          width: 50px;
+        }
+        
+        .calendar__cell--time:after {
+          content: "";
+          background: #ddd;
+          height: 4px;
+          width: 4px;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          border-radius: 50%;
+        }
+        
+        /**************************
+         EVENT
+        **************************/
+        .calendar__event {
+          position: absolute;
+          width: 100%;
+          z-index: 1;
+          float: left;
+          background-color: #505050;
+          color: white;
+          min-height: fit-content;
+          border-radius: 8px;
+          text-align: left;
+        }
+        
+          .calendar__event--time {
+            padding-top: 10px;
+            padding-left: 10px;
+            font-size: 12px;
+          }
+        
+          .calendar__event--title {
+            padding-top: 4px;
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        
+        
+        /**************************
+         EVENT Sizes and offsets
+        **************************/
+        /* 
+            Event duration in minutes: duration-15, duration-30,
+            duration-45, duration-60, ...
+          */
+        
+        /* Event Offset (min.): past-15, past-30 */
+        .calendar__event--past-15 {
+          top: 10px;
+        }
+        
+        .calendar__event--past-30 {
+          top: 20px;
+        }
+        
+        .calendar__event--past-45 {
+          top: 30px;
+        }
+        </style>
 </head>
 </head>
 <body>

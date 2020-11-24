@@ -5,31 +5,42 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/whiteboard.css">
-    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
-    </head>
-    <body>
-        <nav>
-            <div class="div logo">
-                <h4>Studly</h4>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="notes.html">Notes</a></li>
-                <li><a href="agenda.html">Agenda</a></li>
-                <li><a href="tools.html">Tools</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-              
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>    
-        <canvas id="myCanvas">
-            Sorry, your browser does not support HTML5 canvas technology.
-        </canvas>
-        <script src="js/whiteboard.js"></script>
-        <script src="js/styles.js"></script>
-    </body>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script type="text/JavaScript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="div logo">
+            <h4>Studly</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <canvas id="myCanvas">
+        Sorry, your browser does not support HTML5 canvas technology.
+    </canvas>
+    <div class="menu" id="menu">
+        <i class="fa fa-caret-down fa-2x" id="menu-bar" style="color: black;"></i>
+        <i class="fa fa-tint fa-2x menu-item" style="color: black; display: none;" id="color"></i>
+        <i class="fa fa-circle fa-lg menu-item" style="color: black; display: none;"></i>
+        <i class="fa fa-eraser fa-lg menu-item" style="color: black; display: none;"></i>
+    </div>
+    <script src="js/whiteboard.js"></script>
+    <script src="js/styles.js"></script>
+</body>
+
 </html>

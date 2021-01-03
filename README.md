@@ -1,4 +1,4 @@
-<p align="center"><img height="150" src="Studley Logo 1.png" /></p>
+<p align="center"><img height="150" src="Studly Logo 1.png" /></p>
 
 <h1 align="center"> Studly </h1>
 
